@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+
+- name: blackhole
+  config:
+    services:
+      # NTP
+      - port: 123
+        protocol: udp
