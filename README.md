@@ -1,50 +1,35 @@
-# Dionaea-Honeypot-Script
+# DHS (Dionaea-Honeypot-Script)
+* [Documentation](https://dionaea.readthedocs.io/)
+* [Github repo Dionaea](https://github.com/DinoTools/dionaea)
 
 Dionaea is meant to be a nepenthes successor, embedding python as scripting language, using libemu to detect shellcodes, supporting ipv6 and tls.
-
-Protocols
----------
-
-* blackhole
-* epmap
-* ftp
-* http
-* memcache
-* mirror
-* mqtt
-* mssql
-* mysql
-* pptp
-* sip
-* smb
-* tftp
-* upnp
+## About 
+Dionaea Honeypot Script - `dhs.sh` and 
+Dionaea Hobeypot `Docker` Image
 
 Logging
 -------
-
-* fail2ban
-* hpfeeds
 * log_json
-* log_sqlit
 
 Install
 -------------
+sh
 ```bash
-git clone https://github.com/crocup/DHS
-cd DHS
-chmod +x dhs.sh
-./dhs.sh
+$ git clone https://github.com/crocup/DHS
+$ cd DHS
+$ chmod +x dhs.sh
+$ ./dhs.sh
+```
+Docker
+```bash
+$ sudo docker build . -t testdionaea
+$ sudo docker run -p 21:21 -p 80:80 -p 123:123 -p 443:443 -p 445:445 -p 1443:1443 -p 11211:11211 --name testdio testdionaea
 ```
 
 Licenses
 --------
-
 * dionaea: GPLv2+
-* tftp service(modules/python/tftp.py): CNRI Python License (incompatible with GPL)
-* parts of ftp service(modules/python/ftp.py): MIT (compatible with GPL)
-
+* all my files MIT (compatible with GPL)
 Documentation
 -------------
 
-* [Documentation](https://dionaea.readthedocs.io/)
