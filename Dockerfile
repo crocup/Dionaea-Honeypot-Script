@@ -71,13 +71,7 @@ RUN mkdir -p /var/dionaea/binaries \
     /var/dionaea/roots/http/root
 
 RUN rm -rf /opt/dionaea/etc/dionaea/services-enabled && \
-    rm -rf /opt/dionaea/etc/dionaea/ihandlers-enabled && \
-    rm -rf /opt/dionaea/lib/dionaea/python/dionaea/log_db_sql && \
-    rm /opt/dionaea/lib/dionaea/python/dionaea/logsql.py && \
-    rm /opt/dionaea/lib/dionaea/python/dionaea/mirror.py && \
-    rm /opt/dionaea/lib/dionaea/python/dionaea/p0f.py && \
-    rm /opt/dionaea/lib/dionaea/python/dionaea/tftp.py && \
-    rm -rf /opt/dionaea/lib/dionaea/python/dionaea/upnp \
+    rm -rf /opt/dionaea/etc/dionaea/ihandlers-enabled
 
 COPY config/dionaea.cfg /opt/dionaea/etc/dionaea/dionaea.cfg
 COPY config/ihandlers /opt/dionaea/etc/dionaea/ihandlers-enabled
