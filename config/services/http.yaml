@@ -4,7 +4,7 @@
 - name: http
   config:
     # Root directory to look for files
-    root: "/var/dionaea/roots/http/root"
+    root: "/opt/dionaea/var/roots/http/root"
     ports:
       - 80
     ssl_ports:

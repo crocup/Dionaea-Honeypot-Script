@@ -3,6 +3,6 @@
 
 - name: ftp
   config:
-    root: "/var/dionaea/roots/ftp/root"
+    root: "/opt/dionaea/var/roots/ftp/root"
     response_messages:
       welcome_msg: 220 FTP server ready.

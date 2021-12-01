@@ -4,7 +4,6 @@
 
 Dionaea is meant to be a nepenthes successor, embedding python as scripting language, using libemu to detect shellcodes, supporting ipv6 and tls.
 ## About 
-Dionaea Honeypot Script - `dhs.sh` and 
 Dionaea Hobeypot `Docker` Image
 
 Logging
@@ -13,23 +12,32 @@ Logging
 
 Install
 -------------
-sh
 ```bash
 $ git clone https://github.com/crocup/DHS
-$ cd DHS
-$ chmod +x dhs.sh
-$ ./dhs.sh
+$ cd DHS/
+$ sudo docker build . -t honeypot
+$ sudo docker run -p 21:21 -p 80:80 -p 123:123 -p 443:443 -p 445:445 -p 1443:1443 -p 11211:11211 --name my_honeypot honeypot
 ```
-Docker
+
+Exec
+--------
 ```bash
-$ sudo docker build . -t testdionaea
-$ sudo docker run -p 21:21 -p 80:80 -p 123:123 -p 443:443 -p 445:445 -p 1443:1443 -p 11211:11211 --name testdio testdionaea
+$ sudo docker exec -it dio sh
+```
+
+Log files
+--------
+```bash
+$ sudo docker exec -it dio sh
+$ cat /opt/dionaea/var/log/dionaea_incident.json
 ```
 
 Licenses
 --------
 * dionaea: GPLv2+
 * all my files MIT (compatible with GPL)
-Documentation
 -------------
 
+In the Future
+--------
+- create analytic program: Core(FastAPI)

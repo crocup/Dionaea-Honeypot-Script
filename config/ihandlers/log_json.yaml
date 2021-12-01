@@ -7,4 +7,4 @@
     # flat_data: true
     handlers:
       #- http://127.0.0.1:8080/
-      - file:///var/dionaea/logs/dionaea.json
+      - file:///opt/dionaea/var/log/dionaea.json
