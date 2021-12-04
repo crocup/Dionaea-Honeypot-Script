@@ -9,27 +9,33 @@ Dionaea Hobeypot `Docker` Image
 Logging
 -------
 * log_json
+* log_sqlite
 
 Install
 -------------
 ```bash
 $ git clone https://github.com/crocup/DHS
 $ cd DHS/
-$ sudo docker build . -t honeypot
-$ sudo docker run -p 21:21 -p 80:80 -p 123:123 -p 443:443 -p 445:445 -p 1443:1443 -p 11211:11211 --name my_honeypot honeypot
+$ sudo docker build . -t honey
+$ sudo docker run -it --rm -v /opt/honey/log:/opt/dionaea/var/log -p 21:21 -p 80:80 -p 123:123 -p 443:443 -p 445:445 -p 1443:1443 -p 11211:11211 --name dio honey
 ```
 
-Exec
+Exec docker
 --------
 ```bash
-$ sudo docker exec -it dio sh
+$ sudo docker exec -it dio /bin/bash
 ```
 
 Log files
 --------
+JSON
 ```bash
-$ sudo docker exec -it dio sh
-$ cat /opt/dionaea/var/log/dionaea_incident.json
+$ cat /opt/honey/log/dionaea.json
+```
+
+Database(SQLite)
+```sqlite
+select * from connections
 ```
 
 Licenses
